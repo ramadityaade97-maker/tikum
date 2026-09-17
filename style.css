@@ -158,12 +158,13 @@ h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.02em}
 .value p{font-size:13.5px;line-height:1.7;color:rgba(23,59,42,.6);font-weight:300}
 
 /* BEST SELLER */
-.bestseller{padding:90px 0 70px;background:var(--white);position:relative;overflow:hidden}
+.bestseller{padding:90px 0 70px;background:var(--white);position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);}
 .bestseller::before{content:'';position:absolute;top:-80px;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(143,165,143,.12),transparent 70%);pointer-events:none}
 .bestseller::after{content:'';position:absolute;bottom:-100px;right:-80px;width:460px;height:460px;background:radial-gradient(circle,rgba(201,169,106,.10),transparent 70%);pointer-events:none}
 .slider-wrap{position:relative;display:flex;align-items:center;gap:16px;margin-top:40px}
 .slider-viewport{
-  flex:1;overflow-x:auto;overflow-y:hidden;padding:30px 10px 40px;
+  width:100vw;
+  overflow-x:auto;overflow-y:hidden;padding:30px 24px 40px;
   scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
@@ -173,7 +174,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.02em}
 .bs-card{scroll-snap-align:start}
 
 @media(max-width:768px){
-  .slider-viewport{padding:20px 10px 30px}
+  .slider-viewport{padding:20px 24px 30px}
 }
 .bs-card{
   min-width:340px;max-width:360px;flex-shrink:0;
@@ -598,3 +599,5 @@ h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.02em}
   }
 }
 
+
+.slider-btn { display: none !important; }
