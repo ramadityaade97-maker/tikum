@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu TIKUM — Best Seller Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Menggunakan variabel yang ada di style.css */
+    body { background: var(--cream); color: var(--forest); min-height: 100vh; padding-top: 120px; padding-bottom: 80px; }
+    .menu-page-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    
+    .back-btn { 
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 40px; 
+      color: var(--forest); font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+      font-weight: 600; padding: 10px 20px; border: 1px solid rgba(23,59,42,.12); 
+      border-radius: 100px; transition: all .3s ease;
+    }
+    .back-btn:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); transform: translateX(-5px); }
+
+    h1 { text-align: center; font-size: clamp(32px, 5vw, 56px); margin-bottom: 12px; font-family: 'Playfair Display', serif; }
+    .subtitle { text-align: center; margin-bottom: 60px; color: var(--olive); font-weight: 300; letter-spacing: .04em; }
+
+    .menu-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 30px; 
+    }
+    
+    .menu-card { 
+      background: var(--white); 
+      padding: 24px; 
+      border-radius: var(--radius); 
+      box-shadow: var(--shadow);
+      transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s;
+      opacity: 0;
+      animation: revealCard .8s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes revealCard {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-card:nth-child(1) { animation-delay: .1s; }
+    .menu-card:nth-child(2) { animation-delay: .2s; }
+    .menu-card:nth-child(3) { animation-delay: .3s; }
+    .menu-card:nth-child(4) { animation-delay: .4s; }
+    .menu-card:nth-child(5) { animation-delay: .5s; }
+    .menu-card:nth-child(6) { animation-delay: .6s; }
+
+    .menu-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .menu-card img { 
+      border-radius: var(--radius-sm); 
+      height: 220px; 
+      width: 100%; 
+      object-fit: cover; 
+      margin-bottom: 20px;
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .menu-card h3 { 
+      margin: 0 0 10px; 
+      font-family: 'Playfair Display', serif; 
+      color: var(--forest);
+      font-size: 20px;
+    }
+    .menu-card p { font-size: 14.5px; color: var(--olive); line-height: 1.6; margin-bottom: 16px; }
+    .menu-price { font-weight: 600; color: var(--deep); font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="menu-page-container">
+    <a href="index.html" class="back-btn">← Kembali ke Home</a>
+    <h1>Semua Menu Best Seller</h1>
+    <p class="subtitle">Daftar menu kopi dan makanan terbaik di TIKUM.</p>
+    
+    <div style="text-align: center; margin-bottom: 40px; display: flex; justify-content: center; gap: 15px;">
+      <button class="filter-btn active" onclick="filterMenu('all', this)" style="padding: 10px 24px; border-radius: 20px; border: 1px solid var(--forest); background: var(--forest); color: var(--cream); cursor: pointer; font-weight: 500; transition: all .3s ease;">All</button>
+      <button class="filter-btn" onclick="filterMenu('coffee', this)" style="padding: 10px 24px; border-radius: 20px; border: 1px solid var(--forest); background: transparent; color: var(--forest); cursor: pointer; font-weight: 500; transition: all .3s ease;">Coffee</button>
+      <button class="filter-btn" onclick="filterMenu('food', this)" style="padding: 10px 24px; border-radius: 20px; border: 1px solid var(--forest); background: transparent; color: var(--forest); cursor: pointer; font-weight: 500; transition: all .3s ease;">Food</button>
+    </div>
+
+    <div id="coffeeSection" style="transition: opacity .4s ease, transform .4s ease; opacity: 1;">
+      <h2 style="text-align: center; font-family: 'Playfair Display', serif; margin: 60px 0 30px;">Kopi & Minuman</h2>
+      <div class="menu-grid">
+        <!-- Drink Items -->
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=80&auto=format&fit=crop" alt="TIKUM Signature Latte">
+          <h3>TIKUM Signature Latte</h3>
+          <p>Espresso creamy dengan karakter lembut dan signature flavor TIKUM yang khas.</p>
+          <p class="menu-price">Rp 32.000</p>
+          <button class="btn-sm btn-view-detail" data-name="TIKUM Signature Latte" data-detail="Dibuat dari biji kopi pilihan single origin Toraja yang dipadu dengan susu segar bertekstur microfoam halus, serta sentuhan rahasia TIKUM. Memberikan rasa manis alami yang lembut di lidah, cocok untuk menemani hari santai maupun produktif Anda.">View Detail</button>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=700&q=80&auto=format&fit=crop" alt="Palm Sugar Coffee">
+          <h3>Palm Sugar Coffee</h3>
+          <p>Espresso, susu, dan gula aren dengan rasa manis yang seimbang dan hangat.</p>
+          <p class="menu-price">Rp 28.000</p>
+          <button class="btn-sm btn-view-detail" data-name="Palm Sugar Coffee" data-detail="Kopi susu gula aren klasik dengan racikan istimewa. Menggunakan 100% gula aren murni berkualitas tinggi yang memberikan aroma karamel khas, berpadu sempurna dengan kuatnya espresso robusta-arabica TIKUM.">View Detail</button>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=700&q=80&auto=format&fit=crop" alt="TIKUM Cold Brew">
+          <h3>TIKUM Cold Brew</h3>
+          <p>Cold brew yang smooth, refreshing, dan ringan — diseduh 18 jam.</p>
+          <p class="menu-price">Rp 30.000</p>
+          <button class="btn-sm btn-view-detail" data-name="TIKUM Cold Brew" data-detail="Diseduh secara perlahan selama 18 jam dengan air bersuhu dingin untuk mengekstrak rasa terbaik tanpa keasaman berlebih. Menghasilkan karakter kopi yang sangat smooth, clean, dan menyegarkan tenggorokan.">View Detail</button>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=80&auto=format&fit=crop" alt="Coconut Coffee">
+          <h3>Coconut Coffee</h3>
+          <p>Perpaduan espresso dengan sentuhan coconut yang menyegarkan dan creamy.</p>
+          <p class="menu-price">Rp 32.000</p>
+          <button class="btn-sm btn-view-detail" data-name="Coconut Coffee" data-detail="Inovasi rasa tropis yang memadukan espresso robust dengan ekstrak kelapa murni yang kaya nutrisi dan bertekstur creamy. Memberikan sensasi kesegaran yang unik di setiap tegukan.">View Detail</button>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=700&q=80&auto=format&fit=crop" alt="Botanical Matcha">
+          <h3>Botanical Matcha</h3>
+          <p>Matcha Uji premium dengan creamy milk yang menyejukkan di tengah padatnya hari.</p>
+          <p class="menu-price">Rp 30.000</p>
+          <button class="btn-sm btn-view-detail" data-name="Botanical Matcha" data-detail="Menggunakan bubuk matcha asli dari Uji, Kyoto, Jepang. Memiliki aroma earthy yang khas, rasa manis yang pas, serta tekstur creamy yang menenangkan jiwa dan pikiran Anda.">View Detail</button>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=700&q=80&auto=format&fit=crop" alt="Artisan Chocolate">
+          <h3>Artisan Chocolate</h3>
+          <p>Minuman cokelat creamy dengan rasa yang rich, deep, dan comforting.</p>
+          <p class="menu-price">Rp 29.000</p>
+          <button class="btn-sm btn-view-detail" data-name="Artisan Chocolate" data-detail="Racikan cokelat artisan pilihan dengan konsistensi yang pekat, kaya rasa, dan manis yang pas. Sangat cocok dinikmati saat cuaca sejuk atau ketika Anda membutuhkan suntikan semangat.">View Detail</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="foodSection" style="transition: opacity .4s ease, transform .4s ease; opacity: 1;">
+      <h2 style="text-align: center; font-family: 'Playfair Display', serif; margin: 60px 0 30px;">Camilan & Makanan</h2>
+      <div class="menu-grid">
+        <!-- Food Items -->
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700&q=80&auto=format&fit=crop" alt="Croissant">
+          <h3>Butter Croissant</h3>
+          <p>Croissant renyah dengan rasa mentega premium yang meleleh di mulut.</p>
+          <p class="menu-price">Rp 22.000</p>
+          <button class="btn-sm btn-view-detail" data-name="Butter Croissant" data-detail="Dibuat menggunakan mentega berkualitas tinggi asal Prancis dengan teknik pelapisan yang sempurna. Menghasilkan lapisan yang renyah di luar, lembut dan berongga di dalam.">View Detail</button>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700&q=80&auto=format&fit=crop" alt="Pain au Chocolat">
+          <h3>Pain au Chocolat</h3>
+          <p>Danish cokelat klasik dengan isian dark chocolate yang lezat.</p>
+          <p class="menu-price">Rp 25.000</p>
+          <button class="btn-sm btn-view-detail" data-name="Pain au Chocolat" data-detail="Perpaduan antara tekstur flaky khas pastry dan isian cokelat hitam premium yang kaya rasa. Camilan klasik yang selalu memberikan kepuasan maksimal di setiap gigitannya.">View Detail</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function filterMenu(category, btn) {
+        // Update active button styles
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(b => {
+          b.style.background = 'transparent';
+          b.style.color = 'var(--forest)';
+        });
+        btn.style.background = 'var(--forest)';
+        btn.style.color = 'var(--cream)';
+
+        const coffeeSection = document.getElementById('coffeeSection');
+        const foodSection = document.getElementById('foodSection');
+
+        // Smooth transition effect
+        coffeeSection.style.opacity = 0;
+        foodSection.style.opacity = 0;
+
+        setTimeout(() => {
+          if (category === 'all') {
+            coffeeSection.style.display = 'block';
+            foodSection.style.display = 'block';
+          } else if (category === 'coffee') {
+            coffeeSection.style.display = 'block';
+            foodSection.style.display = 'none';
+          } else if (category === 'food') {
+            coffeeSection.style.display = 'none';
+            foodSection.style.display = 'block';
+          }
+          coffeeSection.style.opacity = 1;
+          foodSection.style.opacity = 1;
+        }, 200);
+      }
+    </script>
+
+    <script src="script.js"></script>
+  </div>
+  
+  <!-- DETAIL MODAL -->
+  <div id="detailModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="" />
+          <span class="modal-badge">BEST SELLER</span>
+        </div>
+        <div class="modal-body">
+          <p class="modal-subtitle">Detail Menu</p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalPrice" class="modal-price"></p>
+          <p id="modalDesc" class="modal-desc"></p>
+          <div class="modal-divider"></div>
+          <p id="modalDetail" class="modal-detail-text"></p>
+          <div class="modal-actions">
+            <a id="modalOrderBtn" href="#" target="_blank" class="btn btn-primary">Pesan via WhatsApp ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

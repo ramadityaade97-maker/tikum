@@ -22,13 +22,10 @@
         <a href="#home" class="nav-link active">Home</a>
         <a href="#philosophy" class="nav-link">Philosophy</a>
         <a href="#bestseller" class="nav-link">Best Seller</a>
-        <a href="#menu" class="nav-link">Menu</a>
         <a href="#gallery" class="nav-link">Gallery</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="#menu" class="btn-nav-mobile">Explore Menu</a>
       </nav>
       <div class="nav-actions">
-        <a href="#menu" class="btn btn-nav">Explore Menu</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -125,6 +122,9 @@
       </div>
       <div class="slider-dots" id="sliderDots"></div>
       <p class="slider-hint">← Drag or swipe to explore →</p>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="menu.html" class="btn btn-primary">Lihat Menu Selengkapnya</a>
+      </div>
     </div>
   </section>
 
@@ -156,7 +156,7 @@
           <li><span>○</span> Served hot or iced</li>
         </ul>
         <p class="feat-tagline">Made with care. Served with warmth.</p>
-        <a href="#menu" class="btn btn-primary">Try Our Signature <span class="btn-arrow">→</span></a>
+        <a href="#menu" class="btn btn-primary">View Detail<span class="btn-arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -169,26 +169,7 @@
     <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/></svg></span>
   </div>
 
-  <!-- MENU -->
-  <section id="menu" class="menu">
-    <div class="container">
-      <div class="section-header center reveal">
-        <p class="eyebrow">CRAFTED DAILY</p>
-        <h2>Explore Our Menu</h2>
-        <p class="subtitle">Crafted with passion, brewed for your daily city escape.</p>
-      </div>
-      <div class="menu-tabs reveal" id="menuTabs">
-        <button class="tab active" data-filter="all">All</button>
-        <button class="tab" data-filter="coffee">Coffee</button>
-        <button class="tab" data-filter="non-coffee">Non Coffee</button>
-        <button class="tab" data-filter="tea">Tea</button>
-        <button class="tab" data-filter="food">Food</button>
-        <button class="tab" data-filter="dessert">Dessert</button>
-      </div>
-      <div class="menu-grid" id="menuGrid"></div>
-      <div class="menu-more-wrap reveal" id="menuMoreWrap"><button class="btn btn-outline" id="menuMoreBtn">Lihat Selengkapnya <span class="more-arrow">↓</span></button></div>
-    </div>
-  </section>
+
 
   <div class="leaf-seam seam-5" aria-hidden="true">
     <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 54 C260 14, 500 98, 720 54 C940 10, 1200 94, 1440 54" stroke="rgba(143,165,143,.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 54 C260 14, 500 98, 720 54 C940 10, 1200 94, 1440 54" stroke="rgba(201,169,106,.10)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
@@ -280,13 +261,37 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand"><h3>TIKUM.</h3><p>Coffee • Green Oasis • Connection</p><span>Titik kumpul yang nyaman untuk menikmati kopi berkualitas, beristirahat sejenak, dan menikmati suasana hijau di tengah kota.</span></div>
-        <div class="footer-col"><h4>Explore</h4><a href="#philosophy">Philosophy</a><a href="#bestseller">Best Seller</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a></div>
+        <div class="footer-col"><h4>Explore</h4><a href="#philosophy">Philosophy</a><a href="#bestseller">Best Seller</a><a href="#gallery">Gallery</a></div>
         <div class="footer-col"><h4>Visit</h4><p>Jl. Teuku Umar No. 5<br>Denpasar, Bali<br>07:00 — 22:00 Everyday</p></div>
         <div class="footer-col"><h4>Connect</h4><a href="#">Instagram — @tikum.coffee</a><a href="#">WhatsApp</a><a href="#">TikTok</a><a href="mailto:hello@tikum.coffee">hello@tikum.coffee</a></div>
       </div>
       <div class="footer-bottom"><p>© 2026 TIKUM Coffee. All Rights Reserved.</p><p>Your green sanctuary in the city.</p></div>
     </div>
   </footer>
+
+  <!-- DETAIL MODAL -->
+  <div id="detailModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="" />
+          <span class="modal-badge">BEST SELLER</span>
+        </div>
+        <div class="modal-body">
+          <p class="modal-subtitle">Detail Menu Best Seller</p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalPrice" class="modal-price"></p>
+          <p id="modalDesc" class="modal-desc"></p>
+          <div class="modal-divider"></div>
+          <p id="modalDetail" class="modal-detail-text"></p>
+          <div class="modal-actions">
+            <a id="modalOrderBtn" href="https://wa.me/6281234567890?text=Halo%20TIKUM,%20saya%20ingin%20pesan" target="_blank" class="btn btn-primary">Pesan via WhatsApp ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

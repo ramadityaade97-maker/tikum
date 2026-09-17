@@ -3,57 +3,48 @@ const bestSeller = [
   {
     name: "TIKUM Signature Latte",
     description: "Espresso creamy dengan karakter lembut dan signature flavor TIKUM yang khas.",
+    detail: "Dibuat dari biji kopi pilihan single origin Toraja yang dipadu dengan susu segar bertekstur microfoam halus, serta sentuhan rahasia TIKUM. Memberikan rasa manis alami yang lembut di lidah, cocok untuk menemani hari santai maupun produktif Anda.",
     price: "Rp 32.000",
     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=80&auto=format&fit=crop"
   },
   {
     name: "Palm Sugar Coffee",
     description: "Espresso, susu, dan gula aren dengan rasa manis yang seimbang dan hangat.",
+    detail: "Kopi susu gula aren klasik dengan racikan istimewa. Menggunakan 100% gula aren murni berkualitas tinggi yang memberikan aroma karamel khas, berpadu sempurna dengan kuatnya espresso robusta-arabica TIKUM.",
     price: "Rp 28.000",
     image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=700&q=80&auto=format&fit=crop"
   },
   {
     name: "TIKUM Cold Brew",
     description: "Cold brew yang smooth, refreshing, dan ringan — diseduh 18 jam.",
+    detail: "Diseduh secara perlahan selama 18 jam dengan air bersuhu dingin untuk mengekstrak rasa terbaik tanpa keasaman berlebih. Menghasilkan karakter kopi yang sangat smooth, clean, dan menyegarkan tenggorokan.",
     price: "Rp 30.000",
     image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=700&q=80&auto=format&fit=crop"
   },
   {
     name: "Coconut Coffee",
     description: "Perpaduan espresso dengan sentuhan coconut yang menyegarkan dan creamy.",
+    detail: "Inovasi rasa tropis yang memadukan espresso robust dengan ekstrak kelapa murni yang kaya nutrisi dan bertekstur creamy. Memberikan sensasi kesegaran yang unik di setiap tegukan.",
     price: "Rp 32.000",
     image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=80&auto=format&fit=crop"
   },
   {
     name: "Botanical Matcha",
     description: "Matcha Uji premium dengan creamy milk yang menyejukkan di tengah padatnya hari.",
+    detail: "Menggunakan bubuk matcha asli dari Uji, Kyoto, Jepang. Memiliki aroma earthy yang khas, rasa manis yang pas, serta tekstur creamy yang menenangkan jiwa dan pikiran Anda.",
     price: "Rp 30.000",
     image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=700&q=80&auto=format&fit=crop"
   },
   {
     name: "Artisan Chocolate",
     description: "Minuman cokelat creamy dengan rasa yang rich, deep, dan comforting.",
+    detail: "Racikan cokelat artisan pilihan dengan konsistensi yang pekat, kaya rasa, dan manis yang pas. Sangat cocok dinikmati saat cuaca sejuk atau ketika Anda membutuhkan suntikan semangat.",
     price: "Rp 29.000",
     image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=700&q=80&auto=format&fit=crop"
   }
 ];
 
-const menuData = [
-  { name:"TIKUM Signature Latte", cat:"coffee", price:"Rp 32.000", desc:"Signature blend creamy, lembut.", image:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80&auto=format&fit=crop"},
-  { name:"Urban Americano", cat:"coffee", price:"Rp 25.000", desc:"Espresso murni dengan air, bold & clean.", image:"https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80&auto=format&fit=crop"},
-  { name:"Palm Sugar Coffee", cat:"coffee", price:"Rp 28.000", desc:"Gula aren asli, manis seimbang.", image:"https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80&auto=format&fit=crop"},
-  { name:"Coconut Coffee", cat:"coffee", price:"Rp 32.000", desc:"Espresso & santan segar, tropical.", image:"https://images.unsplash.com/photo-1494314671902-399b18174975?w=600&q=80&auto=format&fit=crop"},
-  { name:"Botanical Matcha", cat:"non-coffee", price:"Rp 30.000", desc:"Matcha Uji premium, silky creamy.", image:"https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80&auto=format&fit=crop"},
-  { name:"Artisan Chocolate", cat:"non-coffee", price:"Rp 29.000", desc:"Cocoa rich & comforting.", image:"https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=600&q=80&auto=format&fit=crop"},
-  { name:"Taro Cloud", cat:"non-coffee", price:"Rp 28.000", desc:"Taro creamy dengan milk foam.", image:"https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80&auto=format&fit=crop"},
-  { name:"Botanical Mint Tea", cat:"tea", price:"Rp 24.000", desc:"Teh melati & daun mint segar.", image:"https://images.unsplash.com/photo-1564890369478-c89ca64c94ea?w=600&q=80&auto=format&fit=crop"},
-  { name:"Lemongrass Tea", cat:"tea", price:"Rp 22.000", desc:"Sereh, jahe, dan madu hutan.", image:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&auto=format&fit=crop"},
-  { name:"Avocado Toast", cat:"food", price:"Rp 38.000", desc:"Sourdough, avocado, poached egg.", image:"https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=80&auto=format&fit=crop"},
-  { name:"Mushroom Panini", cat:"food", price:"Rp 42.000", desc:"Jamur, keju, & pesto basil.", image:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80&auto=format&fit=crop"},
-  { name:"TIKUM Croissant", cat:"dessert", price:"Rp 26.000", desc:"Butter croissant, flaky & warm.", image:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80&auto=format&fit=crop"},
-  { name:"Matcha Tiramisu", cat:"dessert", price:"Rp 35.000", desc:"Layer mascarpone & matcha.", image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80&auto=format&fit=crop"},
-  { name:"Banana Bread", cat:"dessert", price:"Rp 24.000", desc:"Homemade, walnut & cinnamon.", image:"https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=600&q=80&auto=format&fit=crop"},
-];
+
 
 const galleryImages = [
   "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&q=80&auto=format&fit=crop",
@@ -218,7 +209,7 @@ document.addEventListener('DOMContentLoaded',()=>{
           <p>${item.description}</p>
           <div class="bs-bottom">
             <span class="bs-price">${item.price}</span>
-            <button class="btn-sm">View Detail</button>
+            <button class="btn-sm btn-view-detail" data-name="${item.name}">View Detail</button>
           </div>
         </div>
       </article>`;
@@ -328,56 +319,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   // fallback if load already fired
   setTimeout(start, 300);
 
-  // Menu filter + Show 4 / Selengkapnya
-  const menuGrid = document.getElementById('menuGrid');
-  const tabs = document.querySelectorAll('.tab');
-  const moreWrap = document.getElementById('menuMoreWrap');
-  const moreBtn = document.getElementById('menuMoreBtn');
-  let menuFilter = 'all';
-  let menuExpanded = false;
-  const MENU_LIMIT = 4;
-  function getFiltered(){ return menuFilter==='all' ? menuData : menuData.filter(m=>m.cat===menuFilter); }
-  function renderMenu(){
-    const filtered = getFiltered();
-    const toShow = menuExpanded ? filtered : filtered.slice(0, MENU_LIMIT);
-    menuGrid.innerHTML = toShow.map(m=>`
-      <article class="menu-card animate-in" data-cat="${m.cat}">
-        <img src="${m.image}" alt="${m.name}" loading="lazy">
-        <div class="menu-card-body">
-          <span class="menu-cat">${m.cat}</span>
-          <h3>${m.name}</h3>
-          <p>${m.desc}</p>
-          <div class="menu-card-foot">
-            <span class="menu-price">${m.price}</span>
-            <button class="btn-sm">Add</button>
-          </div>
-        </div>
-      </article>
-    `).join('');
-    if(filtered.length <= MENU_LIMIT){
-      moreWrap.classList.add('hidden');
-    } else {
-      moreWrap.classList.remove('hidden');
-      moreBtn.innerHTML = menuExpanded ? `Tampilkan Lebih Sedikit <span class="more-arrow">↑</span>` : `Lihat Selengkapnya <span class="more-arrow">↓</span>`;
-      moreBtn.classList.toggle('expanded', menuExpanded);
-    }
-  }
-  renderMenu();
-  moreBtn.addEventListener('click',()=>{
-    menuExpanded = !menuExpanded;
-    renderMenu();
-    if(!menuExpanded) document.getElementById('menu').scrollIntoView({behavior:'smooth'});
-  });
-  tabs.forEach(t=>t.addEventListener('click',()=>{
-    tabs.forEach(x=>x.classList.remove('active'));
-    t.classList.add('active');
-    menuFilter = t.dataset.filter;
-    menuExpanded = false;
-    menuGrid.style.opacity='0';
-    menuGrid.style.transform='translateY(8px)';
-    menuGrid.style.transition='all .25s';
-    setTimeout(()=>{ renderMenu(); menuGrid.style.opacity='1'; menuGrid.style.transform='none'; }, 220);
-  }));
+
 
   // Gallery masonry + lightbox
   const masonry = document.getElementById('masonry');
@@ -406,6 +348,78 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(e.key==='Escape') closeLB();
     if(e.key==='ArrowLeft') navLB(-1);
     if(e.key==='ArrowRight') navLB(1);
+  });
+
+  // Detail Modal Logic
+  const detailModal = document.getElementById('detailModal');
+  const modalClose = document.getElementById('modalClose');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalPrice = document.getElementById('modalPrice');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalDetail = document.getElementById('modalDetail');
+  const modalOrderBtn = document.getElementById('modalOrderBtn');
+
+  function openDetailModal(btn) {
+    const itemName = btn.getAttribute('data-name');
+    const itemDetail = btn.getAttribute('data-detail');
+    const card = btn.closest('.menu-card');
+    const itemImg = card ? card.querySelector('img').src : '';
+    const itemPrice = card ? card.querySelector('.menu-price').textContent : '';
+    const itemDesc = card ? card.querySelector('p:not(.menu-price)').textContent : '';
+
+    const item = bestSeller.find(b => b.name === itemName);
+
+    if (modalImg) modalImg.src = item ? item.image : itemImg;
+    if (modalImg) modalImg.alt = itemName;
+    if (modalTitle) modalTitle.textContent = itemName;
+    if (modalPrice) modalPrice.textContent = item ? item.price : itemPrice;
+    if (modalDesc) modalDesc.textContent = item ? item.description : itemDesc;
+    if (modalDetail) modalDetail.textContent = item ? (item.detail || item.description) : (itemDetail || itemDesc);
+
+    if (modalOrderBtn) {
+      modalOrderBtn.href = `https://wa.me/6281234567890?text=${encodeURIComponent('Halo TIKUM, saya ingin memesan ' + itemName)}`;
+    }
+
+    if (detailModal) {
+      detailModal.classList.add('active');
+      detailModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeDetailModal() {
+    if (detailModal) {
+      detailModal.classList.remove('active');
+      detailModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Delegate click for Best Seller slider "View Detail"
+  document.addEventListener('click', (e) => {
+    const detailBtn = e.target.closest('.btn-view-detail');
+    if (detailBtn) {
+      openDetailModal(detailBtn);
+    }
+  });
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeDetailModal);
+  }
+
+  if (detailModal) {
+    detailModal.addEventListener('click', (e) => {
+      if (e.target === detailModal) {
+        closeDetailModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && detailModal && detailModal.classList.contains('active')) {
+      closeDetailModal();
+    }
   });
 
   // Scroll reveal
