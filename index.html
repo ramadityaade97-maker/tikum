@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIKUM — Coffee, Green Oasis & Connection</title>
+  <meta name="description" content="TIKUM Coffee — oase hijau di tengah hiruk-pikuk kota. Tempat menikmati kopi berkualitas, ketenangan bernuansa asri, dan momen yang berarti.">
+  <meta name="keywords" content="TIKUM, coffee shop jakarta, kopi, urban oasis, cafe asri, titik kumpul kota, cafe premium">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="page-progress" id="pageProgress"></div>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo"><img src="assets/images/logo-navbar.png" alt="TIKUM Logo" class="nav-logo-img">TIKUM<span>.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="#bestseller" class="nav-link">Best Seller</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#menu" class="btn-nav-mobile">Explore Menu</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#menu" class="btn btn-nav">Explore Menu</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <img src="assets/images/retouch_2026042601552380.jpg" alt="TIKUM Coffee Shop urban green cozy interior" loading="eager">
+      <div class="hero-overlay"></div>
+      <div class="hero-vignette"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <canvas id="rainCanvas" class="rain-canvas" aria-hidden="true"></canvas>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">WELCOME TO</p>
+      <h1 class="hero-title reveal delay-1">TIKUM</h1>
+      <p class="hero-tagline reveal delay-2">Your Green Oasis in the City</p>
+      <p class="hero-desc reveal delay-3">Tempat jeda dari hiruk-pikuk kota untuk menikmati kopi pilihan, berbagi cerita, dan menemukan ketenangan dalam suasana yang hangat dan nyaman.</p>
+      <div class="hero-ctas reveal delay-4">
+        <a href="#bestseller" class="btn btn-primary">Explore Best Seller <span class="btn-arrow">→</span></a>
+        <a href="#philosophy" class="btn btn-ghost">Discover TIKUM</a>
+      </div>
+    </div>
+    <a href="#philosophy" class="scroll-indicator">
+      <span>SCROLL TO EXPLORE</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- seam 1: hero -> philosophy -->
+  <div class="leaf-seam seam-1" aria-hidden="true">
+    <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 56 C260 12, 520 98, 720 52 C920 8, 1180 96, 1440 56" stroke="rgba(143,165,143,.20)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 56 C260 12, 520 98, 720 52 C920 8, 1180 96, 1440 56" stroke="rgba(201,169,106,.11)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <span class="s-leaf s-leaf-1"><svg viewBox="0 0 80 140"><path d="M40 6 C18 28, 6 68, 40 134 C74 68, 62 28, 40 6Z" fill="#173B2A"/><path d="M40 14 L40 128" stroke="rgba(255,255,255,.28)" stroke-width="1.2" stroke-linecap="round"/><path d="M40 42 L22 58 M40 66 L16 82 M40 90 L22 104 M40 56 L60 74 M40 80 L62 96" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-2"><svg viewBox="0 0 72 110"><path d="M36 8 C16 24, 8 58, 36 102 C64 58, 56 24, 36 8Z" fill="#8FA58F"/><path d="M36 16 L36 96" stroke="rgba(255,255,255,.42)" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-3"><svg viewBox="0 0 64 96"><path d="M32 8 C14 22, 8 50, 32 88 C56 50, 50 22, 32 8Z" fill="#C9A96A"/><path d="M32 16 L32 82" stroke="rgba(255,255,255,.34)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/><path d="M28 14 L28 72" stroke="rgba(255,255,255,.30)" stroke-width="1" stroke-linecap="round"/></svg></span>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" class="philosophy">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>The Philosophy of <em>TIKUM</em></h2>
+        <p class="subtitle">More than coffee. A green sanctuary in the city.</p>
+      </div>
+      <div class="phi-grid">
+        <div class="phi-large reveal">
+          <div class="phi-img-wrap">
+            <img src="assets/images/retouch_2026042523102694.jpg" alt="TIKUM interior warm wood" loading="lazy">
+            <div class="phi-badge"><span>EST.</span><strong>2026</strong></div>
+          </div>
+        </div>
+        <div class="phi-text reveal delay-1">
+          <p class="phi-lead">TIKUM lahir dari sebuah gagasan sederhana: bahwa secangkir kopi bukan hanya tentang rasa, tetapi juga tentang waktu, suasana, dan cerita yang tercipta di dalamnya.</p>
+          <p>TIKUM hadir sebagai titik temu di tengah kota — tempat untuk sejenak melepas penat dari kesibukan urban, menikmati waktu dengan lebih perlahan, dan meresapi kehangatan secangkir kopi dalam suasana yang ramah, nyaman, dan menenangkan.</p>
+          <div class="phi-quote"><span>“</span><p>Good coffee doesn't rush. It waits for you to arrive.</p></div>
+        </div>
+        <div class="phi-small-images reveal delay-2">
+          <img src="assets/images/retouch_2026042601533830.jpg" alt="Coffee beans" loading="lazy">
+          <img src="assets/images/retouch_2026042601560513.jpg" alt="TIKUM outdoor green" loading="lazy">
+        </div>
+        <div class="phi-values reveal delay-3">
+          <div class="value"><div class="value-icon">☕</div><h3>Coffee</h3><p>Kopi yang dibuat dengan perhatian terhadap rasa, dari biji pilihan hingga seduhan terakhir.</p></div>
+          <div class="value"><div class="value-icon">🌿</div><h3>Fresh Ambiance</h3><p>Suasana rileks dan hangat dengan sentuhan hijau yang memberi kesegaran di tengah rutinitas kota.</p></div>
+          <div class="value"><div class="value-icon">🤝</div><h3>Connection</h3><p>Tempat untuk bertemu, berbagi cerita, dan menikmati waktu bersama orang terdekat.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="leaf-seam seam-2" aria-hidden="true">
+    <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 54 C280 92, 520 10, 720 54 C920 98, 1160 14, 1440 54" stroke="rgba(143,165,143,.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 54 C280 92, 520 10, 720 54 C920 98, 1160 14, 1440 54" stroke="rgba(201,169,106,.10)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <span class="s-leaf s-leaf-1"><svg viewBox="0 0 80 140"><path d="M40 6 C18 28, 6 68, 40 134 C74 68, 62 28, 40 6Z" fill="#8FA58F"/><path d="M40 14 L40 128" stroke="rgba(255,255,255,.40)" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-2"><svg viewBox="0 0 72 110"><path d="M36 8 C16 24, 8 58, 36 102 C64 58, 56 24, 36 8Z" fill="#C9A96A"/><path d="M36 16 L36 96" stroke="rgba(255,255,255,.34)" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-3"><svg viewBox="0 0 64 96"><path d="M32 8 C14 22, 8 50, 32 88 C56 50, 50 22, 32 8Z" fill="#173B2A"/><path d="M32 16 L32 82" stroke="rgba(255,255,255,.26)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/></svg></span>
+  </div>
+
+  <!-- BEST SELLER -->
+  <section id="bestseller" class="bestseller">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="eyebrow">CUSTOMER FAVORITE — CURATED WITH CARE</p>
+        <h2>TIKUM Best Seller</h2>
+        <p class="subtitle">Our most loved creations.</p>
+      </div>
+      <div class="slider-wrap reveal">
+        <button class="slider-btn prev" id="prevBtn" aria-label="Previous">‹</button>
+        <div class="slider-viewport" id="sliderViewport"><div class="slider-track" id="sliderTrack"></div></div>
+        <button class="slider-btn next" id="nextBtn" aria-label="Next">›</button>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+      <p class="slider-hint">← Drag or swipe to explore →</p>
+    </div>
+  </section>
+
+  <div class="leaf-seam seam-3" aria-hidden="true">
+    <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 52 C240 14, 500 94, 720 52 C940 10, 1200 90, 1440 52" stroke="rgba(143,165,143,.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 52 C240 14, 500 94, 720 52 C940 10, 1200 90, 1440 52" stroke="rgba(201,169,106,.10)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <span class="s-leaf s-leaf-1"><svg viewBox="0 0 72 110"><path d="M36 8 C16 24, 8 58, 36 102 C64 58, 56 24, 36 8Z" fill="#173B2A"/><path d="M36 16 L36 96" stroke="rgba(255,255,255,.24)" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-2"><svg viewBox="0 0 80 140"><path d="M40 6 C18 28, 6 68, 40 134 C74 68, 62 28, 40 6Z" fill="#C9A96A"/><path d="M40 14 L40 128" stroke="rgba(255,255,255,.30)" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-3"><svg viewBox="0 0 64 96"><path d="M32 8 C14 22, 8 50, 32 88 C56 50, 50 22, 32 8Z" fill="#8FA58F"/><path d="M32 16 L32 82" stroke="rgba(255,255,255,.38)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/></svg></span>
+  </div>
+
+  <!-- FEATURED PRODUCT -->
+  <section class="featured">
+    <div class="container featured-grid">
+      <div class="featured-img reveal">
+        <div class="feat-img-wrap" id="featParallax">
+          <img src="assets/images/retouch_2026050716260218.jpg" alt="TIKUM Signature Latte" loading="lazy">
+          <div class="feat-badge">SIGNATURE</div>
+        </div>
+        <div class="feat-deco"></div>
+      </div>
+      <div class="featured-text reveal delay-1">
+        <p class="eyebrow">FEATURED</p>
+        <h2>TIKUM <em>Signature</em></h2>
+        <p class="feat-desc">Perpaduan espresso single origin Toraja dan susu oat creamy, disempurnakan dengan sentuhan gula aren dan aroma vanilla yang hangat. Diroasting medium untuk menonjolkan karakter cokelat dan kacang yang lembut — signature yang tidak akan kamu temukan di tempat lain.</p>
+        <ul class="feat-list">
+          <li><span>○</span> Single origin Toraja beans</li>
+          <li><span>○</span> Oat milk, palm sugar, vanilla</li>
+          <li><span>○</span> Served hot or iced</li>
+        </ul>
+        <p class="feat-tagline">Made with care. Served with warmth.</p>
+        <a href="#menu" class="btn btn-primary">Try Our Signature <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="leaf-seam seam-4" aria-hidden="true">
+    <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 56 C260 96, 520 14, 720 56 C920 96, 1180 16, 1440 56" stroke="rgba(143,165,143,.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 56 C260 96, 520 14, 720 56 C920 96, 1180 16, 1440 56" stroke="rgba(201,169,106,.10)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <span class="s-leaf s-leaf-1"><svg viewBox="0 0 80 140"><path d="M40 6 C18 28, 6 68, 40 134 C74 68, 62 28, 40 6Z" fill="#8FA58F"/><path d="M40 14 L40 128" stroke="rgba(255,255,255,.40)" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-2"><svg viewBox="0 0 64 96"><path d="M32 8 C14 22, 8 50, 32 88 C56 50, 50 22, 32 8Z" fill="#173B2A"/><path d="M32 16 L32 82" stroke="rgba(255,255,255,.26)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-3"><svg viewBox="0 0 72 110"><path d="M36 8 C16 24, 8 58, 36 102 C64 58, 56 24, 36 8Z" fill="#C9A96A"/><path d="M36 16 L36 96" stroke="rgba(255,255,255,.34)" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/></svg></span>
+  </div>
+
+  <!-- MENU -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="eyebrow">CRAFTED DAILY</p>
+        <h2>Explore Our Menu</h2>
+        <p class="subtitle">Crafted with passion, brewed for your daily city escape.</p>
+      </div>
+      <div class="menu-tabs reveal" id="menuTabs">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="coffee">Coffee</button>
+        <button class="tab" data-filter="non-coffee">Non Coffee</button>
+        <button class="tab" data-filter="tea">Tea</button>
+        <button class="tab" data-filter="food">Food</button>
+        <button class="tab" data-filter="dessert">Dessert</button>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <div class="menu-more-wrap reveal" id="menuMoreWrap"><button class="btn btn-outline" id="menuMoreBtn">Lihat Selengkapnya <span class="more-arrow">↓</span></button></div>
+    </div>
+  </section>
+
+  <div class="leaf-seam seam-5" aria-hidden="true">
+    <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 54 C260 14, 500 98, 720 54 C940 10, 1200 94, 1440 54" stroke="rgba(143,165,143,.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 54 C260 14, 500 98, 720 54 C940 10, 1200 94, 1440 54" stroke="rgba(201,169,106,.10)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <span class="s-leaf s-leaf-1"><svg viewBox="0 0 80 140"><path d="M40 6 C18 28, 6 68, 40 134 C74 68, 62 28, 40 6Z" fill="#173B2A"/><path d="M40 14 L40 128" stroke="rgba(255,255,255,.24)" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-2"><svg viewBox="0 0 72 110"><path d="M36 8 C16 24, 8 58, 36 102 C64 58, 56 24, 36 8Z" fill="#8FA58F"/><path d="M36 16 L36 96" stroke="rgba(255,255,255,.40)" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-3"><svg viewBox="0 0 64 96"><path d="M32 8 C14 22, 8 50, 32 88 C56 50, 50 22, 32 8Z" fill="#C9A96A"/><path d="M32 16 L32 82" stroke="rgba(255,255,255,.32)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/></svg></span>
+  </div>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">MOMENTS</p>
+        <h2>Inside <em>TIKUM</em></h2>
+        <p class="subtitle">A glimpse of warmth, green, and slow living.</p>
+      </div>
+      <div class="masonry" id="masonry"></div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img id="lbImage" alt="Gallery full view">
+    <button class="lb-nav next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+  <div class="leaf-seam seam-6" aria-hidden="true">
+    <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 56 C280 90, 520 12, 720 56 C920 98, 1160 18, 1440 56" stroke="rgba(143,165,143,.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 56 C280 90, 520 12, 720 56 C920 98, 1160 18, 1440 56" stroke="rgba(201,169,106,.10)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <span class="s-leaf s-leaf-1"><svg viewBox="0 0 80 140"><path d="M40 6 C18 28, 6 68, 40 134 C74 68, 62 28, 40 6Z" fill="#8FA58F"/><path d="M40 14 L40 128" stroke="rgba(255,255,255,.40)" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-2"><svg viewBox="0 0 72 110"><path d="M36 8 C16 24, 8 58, 36 102 C64 58, 56 24, 36 8Z" fill="#173B2A"/><path d="M36 16 L36 96" stroke="rgba(255,255,255,.24)" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-3"><svg viewBox="0 0 64 96"><path d="M32 8 C14 22, 8 50, 32 88 C56 50, 50 22, 32 8Z" fill="#C9A96A"/><path d="M32 16 L32 82" stroke="rgba(255,255,255,.32)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/></svg></span>
+  </div>
+
+  <!-- ATMOSPHERE -->
+  <section class="atmosphere" id="atmosphere">
+    <div class="atmosphere-bg">
+      <img src="assets/images/retouch_2026042601551215.jpg" alt="TIKUM urban green atmosphere" loading="lazy">
+      <div class="atm-overlay"></div>
+      <div class="atm-dust" id="atmDust" aria-hidden="true"></div>
+    </div>
+    <div class="atmosphere-content">
+      <h2 class="atm-title reveal">Take A Moment.</h2>
+      <div class="atm-lines">
+        <p class="atm-line reveal delay-1">Slow mornings.</p>
+        <p class="atm-line reveal delay-2">Good coffee.</p>
+        <p class="atm-line reveal delay-3">Warm conversations.</p>
+        <p class="atm-line reveal delay-4">Green city escape.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary atm-btn reveal delay-5">Visit Us Today</a>
+    </div>
+  </section>
+
+  <div class="leaf-seam seam-7" aria-hidden="true">
+    <svg class="seam-vine" viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 52 C240 16, 500 96, 720 52 C940 8, 1200 92, 1440 52" stroke="rgba(143,165,143,.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M0 52 C240 16, 500 96, 720 52 C940 8, 1200 92, 1440 52" stroke="rgba(201,169,106,.10)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <span class="s-leaf s-leaf-1"><svg viewBox="0 0 80 140"><path d="M40 6 C18 28, 6 68, 40 134 C74 68, 62 28, 40 6Z" fill="#173B2A"/><path d="M40 14 L40 128" stroke="rgba(255,255,255,.24)" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-2"><svg viewBox="0 0 72 110"><path d="M36 8 C16 24, 8 58, 36 102 C64 58, 56 24, 36 8Z" fill="#8FA58F"/><path d="M36 16 L36 96" stroke="rgba(255,255,255,.40)" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-3"><svg viewBox="0 0 64 96"><path d="M32 8 C14 22, 8 50, 32 88 C56 50, 50 22, 32 8Z" fill="#C9A96A"/><path d="M32 16 L32 82" stroke="rgba(255,255,255,.32)" stroke-width="1" stroke-linecap="round"/></svg></span>
+    <span class="s-leaf s-leaf-4"><svg viewBox="0 0 56 84"><path d="M28 6 C12 18, 6 44, 28 78 C50 44, 44 18, 28 6Z" fill="#66745A"/></svg></span>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <p class="eyebrow">VISIT US</p>
+        <h2>Visit TIKUM</h2>
+        <p class="contact-desc">Temukan kedamaian di tengah kota. Kami menunggu cerita barumu.</p>
+        <div class="contact-items">
+          <div class="c-item"><span class="c-icon">📍</span><div><h4>Location</h4><p id="addr">Jl. Teuku Umar No. 5, Denpasar, Bali</p></div></div>
+          <div class="c-item"><span class="c-icon">🕘</span><div><h4>Opening Hours</h4><p>Everyday — 07:00 to 22:00 WIB</p></div></div>
+          <div class="c-item"><span class="c-icon">📞</span><div><h4>Phone / WhatsApp</h4><p>+62 812 3456 7890</p></div></div>
+          <div class="c-item"><span class="c-icon">📸</span><div><h4>Instagram</h4><p>@tikum.coffee</p></div></div>
+        </div>
+        <a href="https://maps.google.com/?q=Denpasar%20Bali" target="_blank" class="btn btn-primary">Get Directions <span class="btn-arrow">↗</span></a>
+      </div>
+      <div class="contact-map reveal delay-1">
+        <div class="map-wrap">
+          <iframe src="https://maps.google.com/maps?q=Denpasar%20Bali&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="TIKUM Location"></iframe>
+          <div class="map-card"><strong>TIKUM Coffee</strong><span>Find your slow moment</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><h3>TIKUM.</h3><p>Coffee • Green Oasis • Connection</p><span>Titik kumpul yang nyaman untuk menikmati kopi berkualitas, beristirahat sejenak, dan menikmati suasana hijau di tengah kota.</span></div>
+        <div class="footer-col"><h4>Explore</h4><a href="#philosophy">Philosophy</a><a href="#bestseller">Best Seller</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a></div>
+        <div class="footer-col"><h4>Visit</h4><p>Jl. Teuku Umar No. 5<br>Denpasar, Bali<br>07:00 — 22:00 Everyday</p></div>
+        <div class="footer-col"><h4>Connect</h4><a href="#">Instagram — @tikum.coffee</a><a href="#">WhatsApp</a><a href="#">TikTok</a><a href="mailto:hello@tikum.coffee">hello@tikum.coffee</a></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 TIKUM Coffee. All Rights Reserved.</p><p>Your green sanctuary in the city.</p></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
