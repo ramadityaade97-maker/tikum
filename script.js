@@ -215,14 +215,28 @@ document.addEventListener('DOMContentLoaded',()=>{
       </article>`;
   }
 
-  // 3x duplicate guarantees seamless loop on all widths
-  const loopSet = [...shuffled, ...shuffled, ...shuffled];
-  track.innerHTML = loopSet.map(bsHTML).join('');
-  track.classList.add('marquee');
-  viewport.classList.add('marquee');
-  wrapEl.classList.add('marquee-mode');
-  dotsWrap.style.display = 'none';
-  if(hintEl){ hintEl.textContent = '⟵ Mengalir perlahan — hover untuk jeda · drag untuk geser ⟶'; hintEl.classList.add('marquee-hint'); }
+  // Setup standard slider
+  track.innerHTML = shuffled.map(bsHTML).join('');
+  track.classList.add('snap-slider');
+  viewport.classList.add('snap-slider');
+  
+  // Show dots for mobile navigation
+  dotsWrap.style.display = 'flex';
+  const btns = [prevBtn, nextBtn];
+  btns.forEach(b => b.style.display = 'flex');
+
+  // Handle dots
+  shuffled.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = `dot ${i===0?'active':''}`;
+    dot.onclick = () => {
+      const card = track.querySelectorAll('.bs-card')[i];
+      card.scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+    };
+    dotsWrap.appendChild(dot);
+  });
+  
+  if(hintEl) hintEl.textContent = 'Geser untuk melihat lebih lanjut';
 
   let marqueeX = 0;
   let setWidth = 0;
@@ -243,81 +257,71 @@ document.addEventListener('DOMContentLoaded',()=>{
     setWidth = step * shuffled.length;
   }
 
-  function tick(){
-    if(!paused && !isDragging){
-      marqueeX -= speed;
-      if(marqueeX <= -setWidth) marqueeX += setWidth;
-    }
-    // normalize if dragged beyond bounds
-    if(marqueeX > 0) marqueeX = -setWidth + (marqueeX % setWidth);
-    if(marqueeX <= -setWidth*1.5) marqueeX += setWidth;
-    track.style.transform = `translateX(${marqueeX}px)`;
-    rafId = requestAnimationFrame(tick);
+  // Scrolling event listener for dots & active card highlight
+  function updateActiveCard(){
+    const scrollLeft = viewport.scrollLeft;
+    const cardWidth = track.querySelector('.bs-card').offsetWidth + 22;
+    const index = Math.round(scrollLeft / cardWidth);
+    
+    dotsWrap.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === index));
+    
+    track.querySelectorAll('.bs-card').forEach((card, i) => {
+      card.classList.toggle('active', i === index);
+    });
   }
 
-  function start(){ if(rafId) cancelAnimationFrame(rafId); calcWidth(); rafId = requestAnimationFrame(tick); }
+  viewport.addEventListener('scroll', updateActiveCard, {passive:true});
+  
+  // Set initial active card
+  setTimeout(updateActiveCard, 50);
 
-  // controls nudge
-  function nudge(dir){
-    const card = track.querySelector('.bs-card');
-    const gap = parseFloat(getComputedStyle(track).gap || 22);
-    const step = card ? card.offsetWidth + gap : 362;
-    marqueeX += dir * step;
-    if(marqueeX > 0) marqueeX -= setWidth;
-    if(marqueeX < -setWidth) marqueeX += setWidth;
-    track.style.transform = `translateX(${marqueeX}px)`;
+  // Slider buttons for smooth scrolling
+  prevBtn.onclick = () => {
+    viewport.scrollBy({ left: -360, behavior: 'smooth' });
+    resetAutoPlay();
+  };
+  nextBtn.onclick = () => {
+    viewport.scrollBy({ left: 360, behavior: 'smooth' });
+    resetAutoPlay();
+  };
+
+  // Auto-play active slider (every 3.5 seconds)
+  let autoPlayTimer = null;
+  let isUserInteracting = false;
+
+  function startAutoPlay() {
+    autoPlayTimer = setInterval(() => {
+      if (isUserInteracting || document.hidden) return;
+      const cards = track.querySelectorAll('.bs-card');
+      if (!cards.length) return;
+      
+      const cardWidth = cards[0].offsetWidth + 22;
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      
+      if (viewport.scrollLeft + 5 >= maxScroll) {
+        // Loop back to start
+        viewport.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        // Scroll next
+        viewport.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      }
+    }, 3500);
   }
-  prevBtn.addEventListener('click',()=> nudge(1));
-  nextBtn.addEventListener('click',()=> nudge(-1));
 
-  // pause on hover / focus
-  viewport.addEventListener('mouseenter',()=> paused = true);
-  viewport.addEventListener('mouseleave',()=> paused = false);
-  viewport.addEventListener('focusin',()=> paused = true);
-  viewport.addEventListener('focusout',()=> paused = false);
-  document.addEventListener('visibilitychange',()=> paused = document.hidden);
+  function resetAutoPlay() {
+    clearInterval(autoPlayTimer);
+    startAutoPlay();
+  }
 
-  // drag to scroll (pause autoplay while dragging)
-  let startX = 0, startMarqueeX = 0, hasDragged = false;
-  const getX = e => e.touches ? e.touches[0].clientX : e.clientX;
-  const onDown = e=>{
-    isDragging = true; hasDragged = false;
-    startX = getX(e); startMarqueeX = marqueeX;
-    viewport.style.cursor='grabbing';
-    if(e.cancelable && e.type==='touchstart'){} // keep passive
-  };
-  const onMove = e=>{
-    if(!isDragging) return;
-    const diff = getX(e) - startX;
-    if(Math.abs(diff) > 5) hasDragged = true;
-    marqueeX = startMarqueeX + diff;
-    // keep infinite feel
-    if(marqueeX > 0) marqueeX -= setWidth;
-    if(marqueeX < -setWidth*2) marqueeX += setWidth*2;
-    track.style.transform = `translateX(${marqueeX}px)`;
-  };
-  const onUp = ()=>{
-    if(!isDragging) return;
-    isDragging = false; viewport.style.cursor='grab';
-    // normalize to within one set
-    marqueeX = ((marqueeX % setWidth) + setWidth) % setWidth;
-    marqueeX = -marqueeX;
-    if(marqueeX===0) marqueeX = -0.01; // avoid exact 0 snap
-    setTimeout(()=> hasDragged=false, 0);
-  };
-  viewport.addEventListener('mousedown', onDown);
-  window.addEventListener('mousemove', onMove);
-  window.addEventListener('mouseup', onUp);
-  viewport.addEventListener('touchstart', onDown, {passive:true});
-  viewport.addEventListener('touchmove', onMove, {passive:true});
-  viewport.addEventListener('touchend', onUp);
-  track.addEventListener('click', e=>{ if(hasDragged) e.preventDefault(); }, true);
+  // Pause on hover or touch
+  viewport.addEventListener('mouseenter', () => { isUserInteracting = true; });
+  viewport.addEventListener('mouseleave', () => { isUserInteracting = false; });
+  viewport.addEventListener('touchstart', () => { isUserInteracting = true; }, {passive:true});
+  viewport.addEventListener('touchend', () => { 
+    setTimeout(() => { isUserInteracting = false; }, 3000);
+  }, {passive:true});
 
-  window.addEventListener('resize', ()=> calcWidth());
-  // wait for images then measure
-  window.addEventListener('load', start);
-  // fallback if load already fired
-  setTimeout(start, 300);
+  startAutoPlay();
 
 
 
